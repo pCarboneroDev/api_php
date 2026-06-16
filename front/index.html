@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion de clientes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel form-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CRUD PHP</p>
+          <h1>Gestion de clientes</h1>
+        </div>
+        <button class="secondary-button" id="refreshButton" type="button">Actualizar</button>
+      </div>
+
+      <form id="clientForm" autocomplete="off">
+        <input type="hidden" id="clientId">
+
+        <div class="form-grid">
+          <label>
+            Nombre
+            <input id="name" name="name" type="text" placeholder="Ana Garcia" required>
+          </label>
+
+          <label>
+            Email
+            <input id="email" name="email" type="email" placeholder="ana@email.com" required>
+          </label>
+
+          <label>
+            Ciudad
+            <input id="city" name="city" type="text" placeholder="Madrid" required>
+          </label>
+
+          <label>
+            Telefono
+            <input id="telephone" name="telephone" type="tel" placeholder="600123123" required>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-button" id="submitButton" type="submit">Crear cliente</button>
+          <button class="ghost-button" id="cancelButton" type="button" hidden>Cancelar edicion</button>
+        </div>
+      </form>
+
+      <p class="status-message" id="statusMessage" role="status"></p>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Listado</p>
+          <h2>Clientes guardados</h2>
+        </div>
+        <span class="counter" id="clientCounter">0 clientes</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Ciudad</th>
+              <th>Telefono</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="clientsBody">
+            <tr>
+              <td colspan="6" class="empty-state">Cargando clientes...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
